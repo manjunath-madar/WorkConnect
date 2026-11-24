@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job - WorkConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="register-container">
+
+        <div class="register-box">
+
+            <h2>Post a New Job</h2>
+            <p>Find the right workers for your business.</p>
+
+            <form id="postJobForm">
+
+                <div class="form-group">
+                    <label>Job Title</label>
+                    <input type="text" id="jobTitle"
+                        placeholder="Example: Construction Worker" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Job Category</label>
+                    <select id="jobCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Electrician">Electrician</option>
+                        <option value="Plumbing">Plumbing</option>
+                        <option value="Driver">Driver</option>
+                        <option value="Hotel Worker">Hotel Worker</option>
+                        <option value="House Worker">House Worker</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Job Description</label>
+                    <textarea id="jobDescription"
+                        placeholder="Describe the job requirements..."
+                        rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Job Location</label>
+                    <input type="text" id="jobLocation"
+                        placeholder="Enter job location" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Daily Salary (₹)</label>
+                    <input type="number" id="jobSalary"
+                        placeholder="Example: 700" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Number of Workers Required</label>
+                    <input type="number" id="workersRequired"
+                        placeholder="Example: 5" min="1" required>
+                </div>
+
+                <div id="postJobMessage"></div>
+
+                <button type="submit" class="create-account-btn">
+                    Post Job
+                </button>
+
+            </form>
+
+            <br>
+
+            <!-- <a href="employer-dashboard.html">
+                Back to Dashboard
+            </a> -->
+
+            <a href="employer-dashboard.html" class="back-dashboard-link">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

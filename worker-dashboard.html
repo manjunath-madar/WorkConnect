@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Worker Dashboard - WorkConnect</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>WorkConnect</h2>
+
+        <p class="sidebar-role">WORKER PANEL</p>
+<!-- ----------- -->
+<ul>
+
+    <li class="active">
+        <a href="#dashboardSection">🏠 Dashboard</a>
+    </li>
+
+    <li>
+        <a href="#profileSection">👤 My Profile</a>
+    </li>
+
+    <li>
+        <a href="#findJobsSection">🔍 Find Jobs</a>
+    </li>
+
+    <li>
+        <a href="#myApplicationsSection">📋 My Applications</a>
+    </li>
+
+    <li>
+        <a href="#notificationsSection">
+            🔔 Notifications
+            <span id="notificationBadge" class="notification-badge hidden">0</span>
+        </a>
+    </li>
+
+</ul>
+
+ <!-- ---------- -->
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- Main Content -->
+
+    <main class="dashboard-main">
+
+        <!-- Header -->
+
+        <header class="dashboard-header">
+
+            <div>
+                <h2>Worker Dashboard</h2>
+                <p>Manage your work opportunities.</p>
+            </div>
+
+            <div class="worker-info">
+                <span id="workerName">Worker</span>
+                👤
+            </div>
+
+        </header>
+
+
+        <!-- Welcome -->
+
+        <section class="welcome-section" id="dashboardSection">
+
+            <h1 id="welcomeMessage">Welcome!</h1>
+
+            <p>
+                Find nearby jobs and build your future
+                with WorkConnect.
+            </p>
+
+        </section>
+
+
+        <!-- Statistics -->
+
+        <section class="stats-container">
+
+            <div class="stat-card">
+
+                <h3>Applied Jobs</h3>
+
+                <p id="appliedCount">0</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>Completed Jobs</h3>
+
+                <p id="completedCount">0</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>My Skill</h3>
+
+                <p id="workerSkill">Not added</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>My Location</h3>
+
+                <p id="workerLocation">Not added</p>
+
+            </div>
+
+        </section>
+
+           
+<!-- Available Jobs -->
+
+<section class="available-jobs" id="findJobsSection">
+
+    <!-- Section Heading -->
+    <div class="section-heading">
+        <h2>Available Jobs</h2>
+        <p>Explore the latest job opportunities.</p>
+    </div>
+
+    <!-- Job Search Bar -->
+    <div class="job-search">
+
+        <input
+            type="text"
+            id="jobSearchInput"
+            placeholder="Search by job title, skill or location..."
+        >
+
+        <button type="button" id="jobSearchBtn">
+            Search
+        </button>
+
+    </div>
+
+    <!-- Job Category Filter -->
+
+    <div class="job-filter">
+
+        <label for="jobCategoryFilter">Filter by Category:</label>
+
+        <select id="jobCategoryFilter">
+        <option value="all">All Categories</option>
+        </select>
+
+    </div>
+
+    <!-- Available Jobs Container -->
+    <div class="jobs-container" id="availableJobs">
+    </div>
+
+</section>
+
+        <!-- My Applications Section -->
+
+        <section class="available-jobs" id="myApplicationsSection">
+
+            <div class="section-heading">
+                <h2>My Applications</h2>
+                <p>Track the status of your job applications.</p>
+            </div>
+
+            <div class="applications-container" id="workerApplications">
+
+                <p>You haven't applied for any jobs yet.</p>
+
+            </div>
+
+            </section>
+
+            <!-- Notifications Section -->
+
+            <section id="notificationsSection">
+
+                <h2>🔔 Notifications
+                <span id="unreadNotificationCount">(0)</span>
+                </h2>
+
+                <div id="workerNotifications">
+
+                <p>No new notifications.</p>
+
+                </div>
+
+            </section>
+
+        <!-- Profile Information -->
+
+        <section class="profile-section" id="profileSection">
+
+            <h2>My Profile</h2>
+
+            <div class="profile-card">
+
+                <p><strong>Name:</strong> <span id="profileName"></span></p>
+
+                <p><strong>Mobile:</strong> <span id="profilePhone"></span></p>
+
+                <p><strong>Skill:</strong> <span id="profileSkill"></span></p>
+
+                <p><strong>Location:</strong> <span id="profileLocation"></span></p>
+
+                <p><strong>Availability:</strong> <span id="profileAvailability"></span></p>
+                <!-- Edit Profile -->
+
+                <button id="editProfileBtn" class="action-btn">Edit Profile</button>
+
+                <div id="editProfileForm" class="hidden">
+
+                    <h3>Edit Your Profile</h3>
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="editName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" id="editPhone" maxlength="10" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Skill</label>
+                    <input type="text" id="editSkill" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="editLocation" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Availability</label>
+                    <input type="text" id="editAvailability" required>
+                </div>
+
+                <div id="profileMessage"></div>
+
+                <button type="button" id="saveProfileBtn" class="action-btn">
+                    Save Changes
+                </button>
+
+                <button type="button" id="cancelEditBtn" class="action-btn">Cancel</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+
+        <footer class="dashboard-footer">
+
+            <p>© 2026 WorkConnect. All Rights Reserved.</p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

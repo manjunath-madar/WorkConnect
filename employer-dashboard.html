@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employer Dashboard - WorkConnect</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Sidebar -->
+
+<aside class="sidebar">
+
+    <h2>WorkConnect</h2>
+
+    <p class="sidebar-role">EMPLOYER PANEL</p>
+
+    <ul>
+
+        <li class="active">
+            <a href="#employerDashboardSection">🏠 Dashboard</a>
+        </li>
+
+        <li>
+            <a href="post-job.html">➕ Post a Job</a>
+        </li>
+
+        <li>
+            <a href="#employerJobs">📋 My Jobs</a>
+        </li>
+
+        <li>
+            <a href="#applicationsSection">👥 Applications</a>
+        </li>
+
+        <li>
+            <a href="#employerProfileSection">👤 My Profile</a>
+        </li>
+
+    </ul>
+
+    <button id="employerLogoutBtn" class="logout-btn">
+        Logout
+    </button>
+
+</aside>
+
+
+    <!-- Main Content -->
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+                <h2>Employer Dashboard</h2>
+                <p>Manage your job opportunities.</p>
+            </div>
+
+            <div class="worker-info">
+                <span id="employerName">Employer</span> 🏢
+            </div>
+
+        </header>
+
+
+        <!-- Welcome Section -->
+
+        <section class="welcome-section" id="employerDashboardSection">
+
+            <h1 id="employerWelcome">Welcome!</h1>
+
+            <p>
+                Find the right workers for your business
+                with WorkConnect.
+            </p>
+
+        </section>
+
+
+        <!-- Statistics -->
+
+        <section class="stats-container">
+
+            <div class="stat-card">
+                <h3>Total Jobs</h3>
+                <p id="totalJobs">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Applications</h3>
+                <p id="totalApplications">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Business Name</h3>
+                <p id="businessName">Not added</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Location</h3>
+                <p id="businessLocation">Not added</p>
+            </div>
+
+        </section>
+
+
+        <!-- Quick Actions -->
+
+        <section class="available-jobs">
+
+            <div class="section-heading">
+                <h2>Quick Actions</h2>
+                <p>Manage your hiring activities.</p>
+            </div>
+
+            <div class="quick-actions">
+
+                <a href="post-job.html" class="action-btn">➕ Post New Job</a>
+
+                <button class="action-btn" id="viewJobsBtn">
+                    📋 View My Jobs
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Jobs -->
+
+        <section class="available-jobs">
+
+            <div class="section-heading">
+                <h2>Recent Job Postings</h2>
+                <p>Your latest job opportunities.</p>
+            </div>
+
+            <div id="employerJobs" class="jobs-container">
+
+                <p>No jobs posted yet.</p>
+
+            </div>
+
+        </section>
+
+<!-- Applications Section -->
+
+<section class="available-jobs" id="applicationsSection">
+
+    <div class="section-heading">
+        <h2>Worker Applications</h2>
+        <p>View workers who have applied for your jobs.</p>
+    </div>
+
+   <!-- Application Statistics -->
+
+<div class="application-statistics">
+
+    <div class="stat-card total-stat-card">
+        <h3>Total Applications</h3>
+        <p id="totalApplicationsStat">0</p>
+    </div>
+
+    <div class="stat-card pending-stat-card">
+        <h3>Pending</h3>
+        <p id="pendingApplications">0</p>
+    </div>
+
+    <div class="stat-card accepted-stat-card">
+        <h3>Accepted</h3>
+        <p id="acceptedApplications">0</p>
+    </div>
+
+    <div class="stat-card rejected-stat-card">
+        <h3>Rejected</h3>
+        <p id="rejectedApplications">0</p>
+    </div>
+
+</div>
+
+    <!-- Application Filter -->
+
+    <label for="employerApplicationFilter">
+        Filter Applications:
+    </label>
+
+    <select id="employerApplicationFilter">
+        <option value="All">All Applications</option>
+        <option value="Pending">Pending</option>
+        <option value="Accepted">Accepted</option>
+        <option value="Rejected">Rejected</option>
+    </select>
+
+    <div class="applications-container" id="employerApplications">
+
+        <p>No applications received yet.</p>
+
+    </div>
+
+</section>
+
+
+        <!-- Profile -->
+
+        <section class="profile-section" id="employerProfileSection">
+            
+            <h2>Business Information</h2>
+
+            <div class="profile-card">
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="profileEmployerName"></span>
+                </p>
+
+                <p>
+                    <strong>Mobile:</strong>
+                    <span id="profileEmployerPhone"></span>
+                </p>
+
+                <p>
+                    <strong>Business:</strong>
+                    <span id="profileBusinessName"></span>
+                </p>
+
+                <p>
+                    <strong>Business Type:</strong>
+                    <span id="profileBusinessType"></span>
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    <span id="profileBusinessLocation"></span>
+                </p>
+
+                <button id="editEmployerProfileBtn" class="action-btn">Edit Profile</button>
+
+               <!-- edit button -->
+    <div id="editEmployerProfileForm" class="hidden">
+
+    <h3>Edit Business Profile</h3>
+
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="editEmployerName" required>
+    </div>
+
+    <div class="form-group">
+        <label>Mobile Number</label>
+        <input type="tel" id="editEmployerPhone" maxlength="10" required>
+    </div>
+
+    <div class="form-group">
+        <label>Business Name</label>
+        <input type="text" id="editBusinessName" required>
+    </div>
+
+    <div class="form-group">
+        <label>Business Type</label>
+        <input type="text" id="editBusinessType" required>
+    </div>
+
+    <div class="form-group">
+        <label>Business Location</label>
+        <input type="text" id="editBusinessLocation" required>
+    </div>
+
+    <div id="employerProfileMessage"></div>
+
+    <button type="button" id="saveEmployerProfileBtn" class="action-btn">
+        Save Changes
+    </button>
+
+    <button type="button" id="cancelEmployerEditBtn" class="action-btn">
+        Cancel
+    </button>
+
+</div>
+                <!-- edit end -->
+
+            </div>
+
+
+
+
+        </section>
+
+        <!-- Edit Job Modal -->
+
+<div id="editJobModal" class="edit-job-modal hidden">
+
+    <div class="edit-job-modal-content">
+
+        <h2>Edit Job Details</h2>
+
+        <div class="form-group">
+            <label>Job Title</label>
+            <input type="text" id="editJobTitle">
+        </div>
+
+        <div class="form-group">
+            <label>Job Description</label>
+            <textarea id="editJobDescription"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Job Location</label>
+            <input type="text" id="editJobLocation">
+        </div>
+
+        <div class="form-group">
+            <label>Daily Salary (₹)</label>
+            <input type="number" id="editJobSalary">
+        </div>
+
+        <div class="edit-job-actions">
+
+            <button type="button" id="saveJobChangesBtn">
+                Save Changes
+            </button>
+
+            <button type="button" id="cancelJobEditBtn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Delete Job Confirmation Modal -->
+
+<div id="deleteJobModal" class="edit-job-modal hidden">
+
+    <div class="edit-job-modal-content">
+
+        <h2>Delete Job</h2>
+
+        <p>Are you sure you want to delete this job?</p>
+
+        <p>This action cannot be undone.</p>
+
+        <div class="edit-job-actions">
+
+            <button type="button" id="confirmDeleteJobBtn">
+                Yes, Delete
+            </button>
+
+            <button type="button" id="cancelDeleteJobBtn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Close / Reopen Job Confirmation Modal -->
+
+<div id="toggleJobModal" class="edit-job-modal hidden">
+
+    <div class="edit-job-modal-content">
+
+        <h2 id="toggleJobModalTitle">Close Job</h2>
+
+        <p id="toggleJobModalMessage">
+            Are you sure you want to close this job?
+        </p>
+
+        <div class="edit-job-actions">
+
+            <button type="button" id="confirmToggleJobBtn">
+                Yes, Continue
+            </button>
+
+            <button type="button" id="cancelToggleJobBtn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+        <footer class="dashboard-footer">
+            <p>© 2026 WorkConnect. All Rights Reserved.</p>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
