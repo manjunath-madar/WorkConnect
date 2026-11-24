@@ -103,7 +103,7 @@ This is a four-member college team project.
 |---|---|
 | Manjunath M | [@manjunath-madar](https://github.com/manjunath-madar) |
 | Team Member 2 | [@bharatkumar-hub](https://github.com/bharatkumar-hub) |
-| Team Member 3 | [@hhbsomanakatti-del](https://github.com/hhbso manakatti-del) |
+| Team Member 3 | [@hhbsomanakatti-del](https://github.com/hhbsomanakatti-del) |
 | Team Member 4 | [@maheshagoudapatil9-cloud](https://github.com/maheshagoudapatil9-cloud) |
 
 ## 🔮 Future Enhancements
